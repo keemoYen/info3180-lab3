@@ -14,11 +14,11 @@ from app import form
 
 @app.route('/contact', methods=['GET','POST'])
 def contact():
-    myform = ContactForm
+    myform = form.ContactForm()
 
-    name = form.name.data
-    email = form.email.data
-    subject = form.subject.data
+    name = myform.name.data
+    email = myform.email.data
+    subject = myform.subject.data
     return render_template('contact.html', form=myform)
 
 @app.route('/')
