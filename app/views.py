@@ -8,6 +8,10 @@ This file creates your application.
 from app import app
 from flask import render_template, request, redirect, url_for, flash
 from app import form
+from app import mail
+from flask_mail import Message
+
+
 ###
 # Routing for your application.
 ###
@@ -16,9 +20,14 @@ from app import form
 def contact():
     myform = form.ContactForm()
 
-    name = myform.name.data
-    email = myform.email.data
-    subject = myform.subject.data
+    if request.method == 'POST':
+        if myform.validate_on_submit():
+            msg = Message("We made it", sender=(myform.name.data,myform.email.data)
+                , recipients=["to@example.com"])
+            msg.body = 'This is the body of the message'
+            mail.send(msg)
+            return "we made it"
+    print('k')
     return render_template('contact.html', form=myform)
 
 @app.route('/')
