@@ -2,9 +2,9 @@
 
 {% block main %}
     <h2>Contact-Form</h2>
-    <p>Here we are using the Flask-WTF library to create and process a form. Flask-WTF also comes with CSRF protection and validation classes.</p>
 
     <form method="post" action="{{ url_for('contact') }}">
+        {{ form.csrf_token }}
         <div class="form-group">
             {{ form.name.label }} {{ form.name(class="form-control") }}
         </div>

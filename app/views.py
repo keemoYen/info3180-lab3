@@ -22,12 +22,14 @@ def contact():
 
     if request.method == 'POST':
         if myform.validate_on_submit():
+            print('we entered ;;klllllllllllll;')
             msg = Message("We made it", sender=(myform.name.data,myform.email.data)
                 , recipients=["to@example.com"])
             msg.body = 'This is the body of the message'
             mail.send(msg)
             return "we made it"
-    print('k')
+    print(request.method)
+    print(myform.validate_on_submit())
     return render_template('contact.html', form=myform)
 
 @app.route('/')
