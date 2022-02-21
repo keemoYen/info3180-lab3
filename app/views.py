@@ -25,7 +25,7 @@ def contact():
             print('we entered ;;klllllllllllll;')
             msg = Message("We made it", sender=(myform.name.data,myform.email.data)
                 , recipients=["to@example.com"])
-            msg.body = 'This is the body of the message'
+            msg.body = request.form['message']
             mail.send(msg)
             return "we made it"
     print(request.method)
