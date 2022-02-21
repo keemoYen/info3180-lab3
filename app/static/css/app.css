@@ -1,10 +1,33 @@
 body {
     padding-top: 5rem;
 }
-
+main{
+    margin-left: 15px;
+}
+hr{
+    width: 70%;
+}
 .form-group{
     width: 50%;
     margin-top: 40px;
+}
+
+.form-group > p{
+    margin-bottom: 3px;
+    font-weight: bold;
+
+}
+.message{
+    font-size: 30px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    width: 30%;
+}
+
+label{
+    font-size: 12px;
 }
 
 input[type=text]{
