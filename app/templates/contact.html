@@ -2,7 +2,8 @@
 
 {% block main %}
     <h2>Contact-Form</h2>
-
+    <hr>
+    <h6> Fill in this form to contact the site owners.</h6>
     <form method="post" action="{{ url_for('contact') }}">
         {{ form.csrf_token }}
         <div class="form-group">

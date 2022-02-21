@@ -27,7 +27,9 @@ def contact():
                 , recipients=["to@example.com"])
             msg.body = request.form['message']
             mail.send(msg)
-            return "we made it"
+
+            flash ("email sucessfully sent")
+            return redirect('/')
     print(request.method)
     print(myform.validate_on_submit())
     return render_template('contact.html', form=myform)
